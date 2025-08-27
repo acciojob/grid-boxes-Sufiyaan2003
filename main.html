@@ -1,91 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Grid layout (matches image)</title>
-<style>
-  /* reset */
-  *{box-sizing:border-box;margin:0;padding:0}
+<!DOCTYPE html>
 
-  html,body{height:100%}
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-  /* grid container */
-  body#grid{
-    min-height:100vh;
-    display:grid;
-    /* left column (tall 2) + three content columns */
-    grid-template-columns: 22% 1fr 1fr 1fr;
-    /* top bar small + 4 equal rows below */
-    grid-template-rows: 14vh 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "one  one  one  one"
-      "two  three four four"
-      "two  five  five  six"
-      "two  seven eight nine"
-      "two  ten   ten   ten";
-    gap: 14px;              /* white gutters like the image */
-    padding: 14px;          /* outer white border */
-    background: #ffffff;    /* gutter color (white) */
-    font-family: Georgia, serif;
-  }
-
-  /* common item style */
-  #grid > div{
-    background:#2f6f2f;     /* green */
-    color:#fff;
-    display:flex;
-    align-items:flex-start;
-    justify-content:flex-start;
-    padding:20px;
-    font-size: clamp(30px,6vw,72px);
-    line-height:1;
-  }
-
-  /* place items into grid areas */
-  #one   { grid-area: one; }
-  #two   { grid-area: two; }
-  #three { grid-area: three; }
-  #four  { grid-area: four; }
-  #five  { grid-area: five; }
-  #six   { grid-area: six; }
-  #seven { grid-area: seven; }
-  #eight { grid-area: eight; }
-  #nine  { grid-area: nine; }
-  #ten   { grid-area: ten; }
-
-  /* number alignment tweaks (top-left like image) */
-  #grid > div { align-items:flex-start; justify-content:flex-start; }
-  #grid > div::selection{ background:rgba(255,255,255,0.05) }
-
-  /* small responsive tweak so left column never gets too narrow on very small screens */
-  @media (max-width:640px){
-    body#grid{
-      grid-template-columns: 30% 1fr; /* stack content into two columns for small screens */
-      grid-template-rows: 12vh repeat(5, auto);
-      grid-template-areas:
-        "one  one"
-        "two  three"
-        "two  four"
-        "two  five"
-        "two  six"
-        "two  seven";
-    }
-    /* allow items to span full width in this simplified mobile fallback */
-    #four,#five,#six,#seven,#eight,#nine,#ten{ font-size: clamp(20px,6vw,48px) }
-  }
-</style>
-</head>
-<body id="grid">
-  <div id="one">1</div>
-  <div id="two">2</div>
-  <div id="three">3</div>
-  <div id="four">4</div>
-  <div id="five">5</div>
-  <div id="six">6</div>
-  <div id="seven">7</div>
-  <div id="eight">8</div>
-  <div id="nine">9</div>
-  <div id="ten">10</div>
-</body>
+  <body>
+    <body id="grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+    </body>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
 </html>
