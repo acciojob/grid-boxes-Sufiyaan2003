@@ -18,7 +18,7 @@ body#grid > div {
   padding: 0.5em;
 }
 
-/* Use span syntax to match test */
+/* Grid placement using span syntax to match test cases */
 body#grid > div:nth-child(1)  { grid-column: span 4 / auto; grid-row: span 1 / auto; }  /* Full width top */
 body#grid > div:nth-child(2)  { grid-column: span 1 / auto; grid-row: span 4 / auto; }  /* Tall left column */
 body#grid > div:nth-child(3)  { grid-column: span 1 / auto; grid-row: span 1 / auto; }
@@ -28,4 +28,5 @@ body#grid > div:nth-child(6)  { grid-column: span 1 / auto; grid-row: span 1 / a
 body#grid > div:nth-child(7)  { grid-column: span 1 / auto; grid-row: span 1 / auto; }
 body#grid > div:nth-child(8)  { grid-column: span 1 / auto; grid-row: span 1 / auto; }
 body#grid > div:nth-child(9)  { grid-column: span 1 / auto; grid-row: span 1 / auto; }
-body#grid > div:nth-child(10) { grid-column: span 1 / auto; grid-row: span 1 / auto; }
+/* Fix: box 10 spans 3 columns */
+body#grid > div:nth-child(10) { grid-column: span 3 / auto; grid-row: span 1 / auto; }
